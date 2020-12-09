@@ -1,0 +1,19 @@
+#Contents of /etc/systemd/system/ArtNet2DMXGateway.service
+#systemctl daemon-reload
+#systemctl enable ArtNet2DMXGateway.service
+#systemctl start ArtNet2DMXGateway.service
+
+
+[Unit]
+Description= ArtNet2DMX Gateway
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/opt/ArtNet2DMX/ArtNet2DMXGateway.py
+Restart=on-failure
+RestartSec=5s
+
+
+[Install]
+WantedBy=multi-user.target
